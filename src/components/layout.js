@@ -39,8 +39,6 @@ const Layout = ({ children }) => {
             margin: `0 auto`,
             textAlign: `center`,
             width: `100vw`, 
-            padding: `0 1.0875rem 1.45rem`,
-            color: `black`
           }}
         >
 
