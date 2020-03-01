@@ -4,12 +4,11 @@ import SEO from "../components/seo"
 import styled, {keyframes} from 'styled-components'
 
 const NotFoundPage = () => (
-  <Layout>
+  <div>
     <SEO title="Felix" />
-    <div>
+ 
         <Loader>Loading<Blink>...</Blink> </Loader>
     </div>
-  </Layout>
 )
 
 export default NotFoundPage

@@ -42,7 +42,7 @@ const useFetch = (keyword, isLoadingCallback) => {
 
             console.log('rows: ', rows);
             console.log('row: ', rows.find(row => row.keyword === keyword))
-                         setData(rows.find(row => row.keyword === keyword))
+            setData(rows.find(row => row.keyword === keyword))
             isLoadingCallback(false);
         } catch (error) {
           setError(error);
@@ -125,6 +125,8 @@ padding: 1rem 1rem;
 `
 const Hero = styled.div`
 display: flex;
+flex-wrap: flex;
+
 align-items: center;
 justify-content: center;
 min-height: 75vh;
@@ -182,7 +184,7 @@ justify-content: center;
 const Text = styled.p`
 justify-self: center;
 align-self: center;
-
+margin: 4rem 0;
 width: 50%;
 @media (max-width: 768px) {
     width: 90%; 
