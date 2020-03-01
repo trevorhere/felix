@@ -5,11 +5,31 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-159046365-2",
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Trade Winds`, 
+          },
+          {
+            family: `Roboto Mono`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`]
+          },
+        ],
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
