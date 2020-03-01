@@ -125,8 +125,7 @@ padding: 1rem 1rem;
 `
 const Hero = styled.div`
 display: flex;
-flex-wrap: flex;
-
+flex-wrap: wrap;
 align-items: center;
 justify-content: center;
 min-height: 75vh;
