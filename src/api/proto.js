@@ -4,6 +4,12 @@ const URL = process.env.NODE_ENV === "production" ? process.env.GATSBY_AWS_URL: 
 
 
 export const saveEmail = async (email, keyword) => {
+
+    console.log('node: ', process.env.NODE_ENV);
+    console.log('url: ', URL);
+    console.log('gatsby: ', process.env.GATSBY_AWS_URL);
+
+
     
     return await fetch(`${URL}/email`,{
         method: "POST",
