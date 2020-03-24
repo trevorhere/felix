@@ -130,7 +130,7 @@ justify-content: center;
 min-height: 75vh;
 `
 const Media = styled.img`
-max-width: 300px;
+max-width: 500px;
 `
 const HookBox = styled.div`
 margin 0 1rem;
