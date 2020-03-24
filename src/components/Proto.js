@@ -8,7 +8,6 @@ const API = `https://sheets.googleapis.com/v4/spreadsheets/${link}/values:batchG
 
 
 
-
 const useFetch = (keyword, isLoadingCallback) => {
 
 
@@ -135,6 +134,7 @@ max-width: 300px;
 `
 const HookBox = styled.div`
 margin 0 1rem;
+max-width: 30%;
 
 `
 const Hook = styled.div`
