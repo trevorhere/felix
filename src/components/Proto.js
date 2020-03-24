@@ -110,6 +110,9 @@ const Proto = (props) => {
                     {data.copy}
                 </Text>
             </Copy>
+            <CopyRight style={{backgroundColor: `${data.accent ? data.accent : `#fff`}`}}>
+                <p  style={{color: `${isLight(data.accent) ? `black`: `white`}`}}>© Felix Theraputical, 2020</p>
+            </CopyRight>
         </Parent>
     )
   }
@@ -180,7 +183,7 @@ const Button = styled.button `
 
 
 const Copy = styled.div`
-min-height: 50vh;
+min-height: 30vh;
 display:flex;
 align-content: center;
 justify-content: center;
@@ -194,8 +197,16 @@ width: 50%;
     width: 90%; 
     margin: 1rem 0;
   }
+`
+
+const CopyRight = styled.p`
+
+padding: 4rem 0;
+margin: 0 auto;
+text-align:center;
 
 `
+
 const flash = keyframes`
 0%{     color: #000;    }
 49%{    color: #000; }
