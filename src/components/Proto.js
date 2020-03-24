@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react"
-import { Link } from "gatsby"
+import { saveEmail } from '../api/proto';
 import styled, {keyframes} from 'styled-components'
 import {isLight} from './isLight'
 const key = `AIzaSyBVnim0e-dWFqDyKN0FQrUzcV2ZZg1pFc4`;
 const link = `1ix43kxRXfO4YdvPTesdgPc1NVZLi0vnQgvBRvK74Kb4`;
 const API = `https://sheets.googleapis.com/v4/spreadsheets/${link}/values:batchGet?ranges=Sheet1&majorDimension=ROWS&key=${key}`;
-
 
 
 const useFetch = (keyword, isLoadingCallback) => {
@@ -58,6 +57,8 @@ const useFetch = (keyword, isLoadingCallback) => {
 const Proto = (props) => {
     const [isLoading, setIsLoading] = useState(false);
     const [keyword, setKeyword] = useState(false);
+    const [email, setEmail] = useState();
+
 
     const response = useFetch(props.keyword, setIsLoading);
     useEffect(() => {
@@ -93,11 +94,12 @@ const Proto = (props) => {
                             {data.subhook}
                         </SubHook>
                     </Hook>
-                    <Form name={`${data.keyword}`} method="post" data-netlify="true" action={`/proto/${data.keyword}`}>
-                        <input type="hidden" name="form-name" value="contact" />
-                        <Input  placeholder={`${data.email_text}`} name="email" />
-                        <Button type="submit">Go!</Button>
-                    </Form>
+                        <Input   onChange={(e) => setEmail(e.target.value)}  placeholder={`${data.email_text}`} name="email" />
+                        <Button 
+                          onClick={() => {
+                            saveEmail(email, keyword);
+                          }}
+                        >Go!</Button>
                 </HookBox>
             </Hero>
             <Copy style={{backgroundColor: `${data.accent ? data.accent : `#fff`}`}}>
