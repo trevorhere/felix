@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import { saveEmail } from '../api/proto';
 import styled, {keyframes} from 'styled-components'
 import {isLight} from './isLight'
+import validator from 'validator';
 const key = `AIzaSyBVnim0e-dWFqDyKN0FQrUzcV2ZZg1pFc4`;
 const link = `1ix43kxRXfO4YdvPTesdgPc1NVZLi0vnQgvBRvK74Kb4`;
 const API = `https://sheets.googleapis.com/v4/spreadsheets/${link}/values:batchGet?ranges=Sheet1&majorDimension=ROWS&key=${key}`;
@@ -94,10 +95,12 @@ const Proto = (props) => {
                             {data.subhook}
                         </SubHook>
                     </Hook>
-                        <Input   onChange={(e) => setEmail(e.target.value)}  placeholder={`${data.email_text}`} name="email" />
+                        <Input   onChange={(e) => setEmail(e.target.value)}  placeholder={`${data.email_text}`} value={email} name="email" />
                         <Button 
                           onClick={() => {
                             saveEmail(email, keyword);
+                            alert('Thanks for your support, we\'ll stay in touch!');
+                            setEmail('')
                           }}
                         >Go!</Button>
                 </HookBox>
