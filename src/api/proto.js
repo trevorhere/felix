@@ -1,7 +1,6 @@
 import validator from 'validator';
 
-//const URL = process.env.NODE_ENV === "production" ? process.env.GATSBY_AWS_URL: 'http://localhost:3000/prod'
-let URL = "https://79tkfleotb.execute-api.us-east-1.amazonaws.com/prod"
+const URL = process.env.NODE_ENV === "production" ? process.env.GATSBY_AWS_URL: 'http://localhost:3000/prod'
 
 export const saveEmail = async (email, keyword) => {
 
